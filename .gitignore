@@ -1,0 +1,58 @@
+# Compiled binary
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the ones you don't need)
+/vendor/
+/Godeps/
+/go.sum
+
+# Output directories (remove the ones you don't need)
+/bin/
+/pkg/
+
+# Environment variables file
+.env
+
+# IDE-specific files and directories (remove the ones you don't use)
+.idea/
+.vscode/
+
+# Log files and errors
+*.log
+log/
+error.log
+
+# Binary files
+*.bin
+
+# Compiled Object files
+*.o
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.a
+
+# Built application files
+*.app
+
+# Generated files from various go commands
+*.test
+*.prof
+
+# Automatically created build directory
+/build/
+
+# Mac OS X system files
+.DS_Store
