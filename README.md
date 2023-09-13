@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://github.com/muhfaris/cron-app/assets/16787866/364bfba6-8609-439a-9eb1-3c96b702ce5a"/>
+</p>
+
 # Cron App
 
 Cron App is a simple command-line utility written in Go that allows you to schedule and execute commands at specified intervals using the cron syntax. This README provides an overview of the project, how to build and run it, and how to configure scheduled tasks.

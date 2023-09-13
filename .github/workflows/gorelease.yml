@@ -1,0 +1,24 @@
+name: Release with GoReleaser
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: "1.x" # Ganti dengan versi Go yang Anda butuhkan
+      - name: Install gorelease
+        run: |
+          go install github.com/goreleaser/gorelease@latest
+      - name: Run GoReleaser
+        run: |
+          gorelease --version
+          gorelease --rm-dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
