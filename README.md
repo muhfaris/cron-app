@@ -84,7 +84,7 @@ To run your Go application as a systemd service on a Linux system, you can creat
    WorkingDirectory=/home/muhfaris/.config/cron-app
    Restart=always
    RestartSec=3
-   Environment=CONFIG_PATH=/home/muhfaris/.config/cron-app/config.json
+   Environment=CONFIG_PATH=config.json
    StandardOutput=syslog
    StandardError=syslog
 
@@ -129,20 +129,21 @@ To run your Go application as a systemd service on a Linux system, you can creat
    example response:
 
    ```bash
-    cron-app.service - Cron App Service
+    ● cron-app.service - Cron App Service
          Loaded: loaded (/etc/systemd/system/cron-app.service; disabled; preset: enabled)
-         Active: active (running) since Wed 2023-09-13 06:51:22 WIB; 4s ago
-       Main PID: 525450 (cron-app)
-          Tasks: 6 (limit: 18715)
-         Memory: 1.2M
-            CPU: 9ms
+         Active: active (running) since Wed 2023-09-13 07:18:32 WIB; 4s ago
+       Main PID: 561435 (cron-app)
+          Tasks: 9 (limit: 18715)
+         Memory: 1.6M
+            CPU: 6ms
          CGroup: /system.slice/cron-app.service
-                 └─525450 /usr/local/bin/cron-app
+                 └─561435 /usr/local/bin/cron-app
 
-    Sep 13 06:51:22 ichiro systemd[1]: Started cron-app.service - Cron App Service.
-    Sep 13 06:51:22 ichiro cron-app[525450]: load config error open .config/cron-app/config.json: no such file or directory
-    Sep 13 06:51:22 ichiro cron-app[525450]: app-cron: "ts"="2023-09-13 06:51:22.697648" "level"=0 "msg"="starting app"
-    Sep 13 06:51:22 ichiro cron-app[525450]: "ts"="2023-09-13 06:51:22.700255" "level"=0 "msg"="start"
+    Sep 13 07:18:32 ichiro systemd[1]: Started cron-app.service - Cron App Service.
+    Sep 13 07:18:32 ichiro cron-app[561435]: app-cron: "ts"="2023-09-13 07:18:32.364736" "level"=0 "msg"="starting app"
+    Sep 13 07:18:32 ichiro cron-app[561435]: app-cron: "ts"="2023-09-13 07:18:32.364883" "level"=0 "msg"="list crons" "schedule"="*/1 * * * *" "command"="docker exec -i mongodb1 ls"
+    Sep 13 07:18:32 ichiro cron-app[561435]: "ts"="2023-09-13 07:18:32.365073" "level"=0 "msg"="start"
+    Sep 13 07:18:32 ichiro cron-app[561435]: "ts"="2023-09-13 07:18:32.365111" "level"=0 "msg"="schedule" "now"="2023-09-13 00:18:32.365104403 +0000 UTC" "entry"=1 "next"="2023-09-13 00:19:00 +0000 UTC"
    ```
 
    To view the application's logs, you can use the `journalctl` command:

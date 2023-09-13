@@ -23,6 +23,11 @@ var (
 )
 
 func init() {
+	envConfigPath := os.Getenv("CONFIG_PATH")
+	if envConfigPath != "" {
+		configPath = envConfigPath
+	}
+
 	err := LoadConfig(configPath)
 	if err != nil {
 		fmt.Printf("load config error %v\n", err)
