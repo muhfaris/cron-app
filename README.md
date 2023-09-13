@@ -180,7 +180,7 @@ The configuration file has the following structure:
 
 - `command`: The command to be executed at the scheduled time. You can specify any valid shell command or script here.
 
-After editing the configuration file, you can restart Cron App to apply the changes. The application will automatically reload the configuration when it detects changes to the file.
+After editing the configuration file, you can save to apply the changes. The application will automatically reload the configuration when it detects changes to the file.
 
 ## Usage
 
